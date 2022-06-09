@@ -21,7 +21,11 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-#Primeiros passos
+<h4 align="center">
+🚧  Projeto Gestor 🚀 Em construção...  🚧
+</h4>
+
+# Primeiros passos
 ```bash
 # Clone este repositório
 $ git clone <https://github.com/viyuka45/api-gestao.git>
@@ -47,7 +51,7 @@ DB_PASSWORD=root
 $ docker-compose up -d
 
 #Acesse o container
-$ docker-compose exec desafio-writ bash
+$ docker-compose exec api-gestao
 
 #Instale as dependências
 $ composer install
