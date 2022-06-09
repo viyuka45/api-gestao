@@ -13,16 +13,16 @@ class MatriculaController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
         $matriculas = Matricula::query();
 
         if (!empty($request->id_aluno)) {
-            $matriculas->where('id_aluno', 'like', '%' . $request->id_aluno . '%');
+            $matriculas->where('id_aluno', $request->id_aluno);
         }
 
         if (!empty($request->id_curso)) {
-            $matriculas->where('id_curso', 'like', '%' . $request->id_curso . '%');
+            $matriculas->where('id_curso', $request->id_curso);
         }
 
         $matriculas->with(['aluno', 'curso']);

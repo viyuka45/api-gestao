@@ -74,7 +74,8 @@ $ php artisan migrate --seed
 # API aluno
 - [X] Cadastrar aluno
 ```bash
- POST - http://127.0.0.1:8000/api/alunos   {
+ POST - http://127.0.0.1:8000/api/alunos   
+    {
       "name": "nome do aluno",
       "email": "teste@teste.com",
       "dt_nascimento": "Y-m-d"
@@ -92,7 +93,8 @@ GET - http://127.0.0.1:8000/api/alunos
 - [X] Update do aluno
 - Os dados podem ser atualizados individualmente ou vários de uma só vez
 ```bash
- PUT - http://127.0.0.1:8000/api/alunos/{id}   {
+ PUT - http://127.0.0.1:8000/api/alunos/{id}   
+    {
       "name": "nome do aluno",
       "email": "teste@teste.com",
       "dt_nascimento": "Y-m-d"
@@ -102,7 +104,8 @@ GET - http://127.0.0.1:8000/api/alunos
 # API curso
 - [X] Cadastrar curso
 ```bash
- POST - http://127.0.0.1:8000/api/cursos   {
+ POST - http://127.0.0.1:8000/api/cursos   
+    {
       "titulo": "Título do curso",
       "descricao": "Descrição do curso"
     }
@@ -119,7 +122,8 @@ GET - http://127.0.0.1:8000/api/cursos
 - [X] Update do curso
 - Os dados podem ser atualizados individualmente ou vários de uma só vez
 ```bash
- PUT - http://127.0.0.1:8000/api/cursos/{id}   {
+ PUT - http://127.0.0.1:8000/api/cursos/{id}   
+    {
       "titulo": "Título do curso",
       "descricao": "Descrição do curso"
     }
@@ -127,7 +131,8 @@ GET - http://127.0.0.1:8000/api/cursos
 # API Matrícula
 - [X] Cadastro de matrícula
 ```bash
- POST - http://127.0.0.1:8000/api/matriculas   {
+ POST - http://127.0.0.1:8000/api/matriculas   
+    {
       "name": "titulo",
       "email": "teste@teste.com",
       "dt_nascimento": "Y-m-d"
@@ -146,7 +151,8 @@ GET - http://127.0.0.1:8000/api/matriculas
 - [X] Update da matrícula
 - Os dados podem ser atualizados individualmente ou vários de uma só vez
 ```bash
- PUT - http://127.0.0.1:8000/api/matriculas/{id}   {
+ PUT - http://127.0.0.1:8000/api/matriculas/{id}   
+    {
       "name": "titulo",
       "email": "teste@teste.com",
       "dt_nascimento": "Y-m-d"
