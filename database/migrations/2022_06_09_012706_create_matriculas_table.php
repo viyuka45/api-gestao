@@ -15,6 +15,14 @@ class CreateMatriculasTable extends Migration
     {
         Schema::create('matriculas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_aluno')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('id_curso')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
