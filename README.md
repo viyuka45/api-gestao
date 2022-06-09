@@ -33,10 +33,10 @@ $ git clone https://github.com/viyuka45/api-gestao.git
 #Acesse o sistema
 $ cd api-gestao
 
-#Clonar o arquivo .env.exemple
+# Clonar o arquivo .env.exemple
 $ cp .env.example .env
 
-#Atualizar as variáveis de ambiente
+# Atualizar as variáveis de ambiente
 APP_NAME=api-gestao
 APP_URL=http://api-gestao.test
 
@@ -56,19 +56,19 @@ OU
 # Apagar todas as seed e executar novamente
 $ php artisan migrate:fresh --seed
 -------------------------------------------------------------------
-#Subir os containers no Docker
+# Subir os containers no Docker
 $ docker-compose up -d
 
-#Acesse o container no Docker
+# Acesse o container no Docker
 $ docker-compose exec api-gestao
 
-#Instale as dependências
+# Instale as dependências
 $ composer install
 
-#Gere a chave
+# Gere a chave
 $ php artisan key:generate
 
-#Rode as migrations e as seeds
+# Rode as migrations e as seeds
 $ php artisan migrate --seed
 ```
 # API aluno
@@ -158,5 +158,7 @@ GET - http://127.0.0.1:8000/api/matriculas
       "dt_nascimento": "Y-m-d"
     }
 ```
+
+# Obrigada :)
 
 
