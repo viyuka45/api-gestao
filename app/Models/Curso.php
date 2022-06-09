@@ -10,7 +10,8 @@ class Curso extends Model
     use HasFactory;
 
     protected $fillable = [
-        'titulo', 'descricao'
+        'titulo',
+        'descricao'
     ];
 
     static $rules=[
@@ -24,6 +25,6 @@ class Curso extends Model
 
     public function alunos()
     {
-        return $this->belongsToMany(Aluno::class,'matriculas','curso_id','aluno_id');
+        return $this->belongsToMany(Aluno::class,'tb_matricula','id_curso','id_aluno');
     }
 }

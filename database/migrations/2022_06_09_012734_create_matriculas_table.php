@@ -13,17 +13,18 @@ class CreateMatriculasTable extends Migration
      */
     public function up()
     {
-        Schema::create('matriculas', function (Blueprint $table) {
+        Schema::create('tb_matricula', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_aluno')
-                ->constrained()
+                ->constrained('tb_aluno')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreignId('id_curso')
-                ->constrained()
+                ->constrained('tb_curso')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -34,6 +35,6 @@ class CreateMatriculasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('matriculas');
+        Schema::dropIfExists('tb_matricula');
     }
 }

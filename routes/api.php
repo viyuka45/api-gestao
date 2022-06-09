@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::controller(\App\Http\Controllers\AlunoController::class)->group(function () {
+    Route::prefix('alunos')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/{id}', 'show');
+        Route::delete('/{id}', 'destroy');
+        Route::put('/{id}', 'update');
+        Route::post('/', 'store');
+
+    });
 });

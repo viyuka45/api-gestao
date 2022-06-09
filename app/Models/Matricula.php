@@ -10,7 +10,8 @@ class Matricula extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_aluno', 'id_curso'
+        'id_aluno',
+        'id_curso'
     ];
 
     /**
