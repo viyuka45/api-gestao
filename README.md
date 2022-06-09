@@ -30,7 +30,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 # Clone este repositório
 $ git clone https://github.com/viyuka45/api-gestao.git
 
-#Rode o sistema
+#Acesse o sistema
 $ cd api-gestao
 
 #Clonar o arquivo .env.exemple
