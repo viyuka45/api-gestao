@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +20,26 @@ Route::controller(\App\Http\Controllers\AlunoController::class)->group(function 
         Route::delete('/{id}', 'destroy');
         Route::put('/{id}', 'update');
         Route::post('/', 'store');
-
     });
 });
+
+Route::controller(\App\Http\Controllers\CursoController::class)->group(function () {
+    Route::prefix('cursos')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/{id}', 'show');
+        Route::delete('/{id}', 'destroy');
+        Route::put('/{id}', 'update');
+        Route::post('/', 'store');
+    });
+});
+
+Route::controller(\App\Http\Controllers\MatriculaController::class)->group(function () {
+    Route::prefix('matriculas')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/{id}', 'show');
+        Route::delete('/{id}', 'destroy');
+        Route::put('/{id}', 'update');
+        Route::post('/', 'store');
+    });
+});
+

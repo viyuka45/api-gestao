@@ -60,8 +60,8 @@ class AlunoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
     {
@@ -71,13 +71,13 @@ class AlunoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $id)
     {
-//        dd($request->all());
         $input = Validator::make($request->all(), [
             'nome' => 'string|max:255',
             'email' => 'email|max:255|unique:tb_aluno',
@@ -88,15 +88,17 @@ class AlunoController extends Controller
             return response()->json(['message' => $input->errors()]);
         }
 
-        dd($input->validated());
+        Aluno::where('id', $id)
+            ->update($input->validated());
 
+        return response()->json(['message' => 'Alterações realizadas com sucesso!']);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {

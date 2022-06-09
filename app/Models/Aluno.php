@@ -22,14 +22,4 @@ class Aluno extends Model
     ];
 
     protected $dates = ['dt_nascimento'];
-
-    public function matriculas()
-    {
-        return $this->hasMany(Matricula::class);
-    }
-
-    public function cursos()
-    {
-        return $this->belongsToMany(Curso::class, 'tb_matricula', 'id_aluno', 'id_curso');
-    }
 }

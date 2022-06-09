@@ -4,27 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Curso extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $table = 'tb_curso';
 
     protected $fillable = [
         'titulo',
         'descricao'
     ];
 
-    static $rules=[
-        'titulo'=>'required',
+    static $rules = [
+        'titulo' => 'required',
     ];
-
-    public function matriculas()
-    {
-        return $this->hasMany(Matricula::class);
-    }
-
-    public function alunos()
-    {
-        return $this->belongsToMany(Aluno::class,'tb_matricula','id_curso','id_aluno');
-    }
 }

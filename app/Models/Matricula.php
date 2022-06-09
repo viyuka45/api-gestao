@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Matricula extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $table = 'tb_matricula';
 
     protected $fillable = [
         'id_aluno',
@@ -15,18 +18,18 @@ class Matricula extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function Alunos()
+    public function aluno()
     {
-        return $this->belongsTo(Aluno::class,'id_aluno','id');
+        return $this->hasOne(Aluno::class, 'id', 'id_aluno');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function Cursos()
+    public function curso()
     {
-        return $this->hasMany(Curso::class,'id_curso','id');
+        return $this->hasOne(Curso::class, 'id', 'id_curso');
     }
 }

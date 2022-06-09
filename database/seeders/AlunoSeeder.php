@@ -17,14 +17,14 @@ class AlunoSeeder extends Seeder
     {
         DB::table('tb_aluno')->insert([
             [
-                'nome' => 'Paulo',
-                'email' => 'paulo@gmail.com',
+                'nome' => 'Paulo Andrade',
+                'email' => 'pauloandrade@gmail.com',
                 'data_nascimento' => '2022-06-09',
                 'created_at' => Carbon::now()
             ],
             [
-                'nome' => 'Maria',
-                'email' => 'maria@gmail.com',
+                'nome' => 'Maria Fernadez',
+                'email' => 'mariafernandes@gmail.com',
                 'data_nascimento' => '2021-06-18',
                 'created_at' => Carbon::now()
             ]
