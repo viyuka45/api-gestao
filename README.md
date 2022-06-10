@@ -144,7 +144,7 @@ GET - http://127.0.0.1:8000/api/cursos
 GET - http://127.0.0.1:8000/api/matriculas
 ```
 - [X] Listar uma matrícula específica
-- A busca pode ser feita pelo título ou partes dele: (Engenharia de Software ou Eng)
+- A busca pode ser feita pelo id_matricula ou pelo id_curso
 ```bash
  GET - http://127.0.0.1:8000/api/matriculas/{id}
 ```
